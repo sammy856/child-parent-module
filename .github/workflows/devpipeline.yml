@@ -7,8 +7,17 @@ jobs:
     name: first job
     runs-on: ubuntu-latest
     steps:
+
+    # puraani files delete karta hai, repository ko clone karta hai current wali
       - name: Checkout
         uses: actions/checkout@v6.0.2
         
       - name: Greetings
-        run: echo " my first pepiline demo"
+        run: echo "Hello from linux"
+        
+  my_second_job:
+    name: secong job
+    runs-on: windows-latest
+    steps:
+      - name: Greetings 2
+        run: write-host "Hello from Windows" 
