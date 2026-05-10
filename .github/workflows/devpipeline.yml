@@ -1,0 +1,11 @@
+name: Terraform Workflow
+
+on: workflow_dispatch
+
+jobs:
+  my_first_job:
+    name: first job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greetings
+        run: echo " my first pepiline demo"
