@@ -14,10 +14,14 @@ jobs:
         
       - name: Greetings
         run: echo "Hello from linux"
+
+        # dono jobs parrallen chalengi agar needs ni lagayenge to
+        # needs lagane ke baad sequence me chalengi
         
   my_second_job:
     name: secong job
     runs-on: windows-latest
+    needs: my_first_job
     steps:
       - name: Greetings 2
         run: write-host "Hello from Windows" 
