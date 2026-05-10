@@ -7,5 +7,8 @@ jobs:
     name: first job
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+        
       - name: Greetings
         run: echo " my first pepiline demo"
