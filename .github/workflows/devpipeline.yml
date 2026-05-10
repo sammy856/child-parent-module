@@ -9,11 +9,11 @@ jobs:
     steps:
 
     # puraani files delete karta hai, repository ko clone karta hai current wali
-      # - name: Checkout
-      #   uses: actions/checkout@v6.0.2
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
         
-      # - name: Greetings
-      #   run: echo "Hello from linux"
+      - name: Greetings
+        run: write host "Hello from linux"
 
         # dono jobs parrallen chalengi agar needs ni lagayenge to
         # needs lagane ke baad sequence me chalengi
