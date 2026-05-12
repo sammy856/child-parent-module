@@ -13,7 +13,7 @@
 # 2nd way
 variable "rgdetails" {
   type = map(object({
-    name     = string
+    rgname     = string
     location = string
   }))
 }

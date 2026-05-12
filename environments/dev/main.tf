@@ -6,9 +6,9 @@
 #         }
 
 
-module "RG1" {
+module "RGS" {
     source = "../../modules/resource_group"
-    rgdetails = var.rg_attribute_details
+    rgdetails = var.rg_details
     # rgdetails = {
     #         RG1 = { 
 
@@ -23,15 +23,26 @@ module "RG1" {
 
 }
 
-details= x
-x= y
 
-details =y 
-
-
-# map = { 
-#     rgename = "east us"
-# }
+module "vnets" {
+    source = "../../modules/virtual_network"
+    vnetdetails = var.vnet_details
+}
 
 
+module "nics" {
+    source = "../../modules/nic"
+    nicdetails = var.nic_details
+}
 
+
+module "lvm" {
+    source = "../../modules/LinuxVm"
+    lvmdetails = var.lvm_details
+}
+
+
+module "kvs" {
+    source = "../../modules/keyvault"
+    kvdetails = kv_details
+}
