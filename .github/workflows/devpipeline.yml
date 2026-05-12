@@ -1,0 +1,29 @@
+name: Terraform Workflow
+
+on: workflow_dispatch
+
+jobs:
+  my_first_job:
+    name: first job
+    runs-on: ubuntu-latest
+    steps:
+
+    # puraani files delete karta hai, repository ko clone karta hai current wali
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+        
+      - name: Greetings
+        run: write host "Hello from linux"
+
+        # dono jobs parrallen chalengi agar needs ni lagayenge to
+        # needs lagane ke baad sequence me chalengi
+        # agar pahla jon fail hoga to dusra skip ho jayega
+        
+  my_second_job:
+    name: secong job
+    runs-on: windows-latest
+    needs: my_first_job
+    if: always()
+    steps:
+      - name: Greetings 2
+        run: write-host "Hello from Windows" 
